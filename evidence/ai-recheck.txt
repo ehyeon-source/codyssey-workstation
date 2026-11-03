@@ -1,0 +1,76 @@
+===== #4 HELLO WORLD =====
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+===== #7 HTTP 8080 =====
+HTTP/1.1 200 OK
+Server: nginx/1.31.8
+Date: Tue, 03 Nov 2026 09:34:05 GMT
+Content-Type: text/html
+Content-Length: 346
+Last-Modified: Tue, 03 Nov 2026 05:48:00 GMT
+Connection: keep-alive
+ETag: "6ae97590-15a"
+Accept-Ranges: bytes
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Codyssey Workstation</title>
+</head>
+<body>
+    <h1>나의 첫 개발 작업실</h1>
+    <h2>Codyssey Workstation</h2>
+    <p>Ubuntu에서 만든 첫 번째 웹사이트입니다.</p>
+    <p>앞으로 Docker를 이용해 실행할 예정입니다.</p>
+</body>
+</html>
+===== #7 HTTP 8081 =====
+HTTP/1.1 200 OK
+Server: nginx/1.31.8
+Date: Tue, 03 Nov 2026 09:34:05 GMT
+Content-Type: text/html
+Content-Length: 393
+Last-Modified: Tue, 03 Nov 2026 06:52:52 GMT
+Connection: keep-alive
+ETag: "6ae984c4-189"
+Accept-Ranges: bytes
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Codyssey Workstation</title>
+</head>
+<body>
+    <h1>나의 첫 개발 작업실</h1>
+    <h2>Codyssey Workstation</h2>
+    <p>Ubuntu에서 만든 첫 번째 웹사이트입니다.</p>
+    <p>앞으로 Docker를 이용해 실행할 예정입니다.</p>
+    <p>바인드 마운트 실험 성공!</p>
+</body>
+</html>
+
+===== #9 GIT REMOTE =====
+origin	https://github.com/ehyeon-source/codyssey-workstation.git (fetch)
+origin	https://github.com/ehyeon-source/codyssey-workstation.git (push)

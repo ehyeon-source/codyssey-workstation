@@ -262,3 +262,50 @@ VS Code 내부에서 GitHub의 Pull Requests 및 Issues 메뉴가
 ## 16. 추가 실행 검증
 
 - [이미지 다운로드, 빌드, exec, Git 및 Bash 확인 기록](evidence/final-checks.txt)
+
+## 17. AI 사전평가 보완 사항
+
+### #4. hello-world 실행 검증
+Docker 공식 hello-world 이미지를 실행하고 실제 출력 결과를 기록했습니다.
+
+### #7. HTTP 응답 검증
+호스트의 8080, 8081 포트에 curl로 직접 요청하여
+HTTP 상태코드, 응답 헤더, HTML 본문을 확인했습니다.
+
+### #9. Git 원격 저장소 검증
+git remote -v 명령으로 origin 저장소의 fetch/push 주소를 확인했습니다.
+
+[실제 명령어 실행 결과](evidence/ai-recheck.txt)
+
+### #13. 네트워크 네임스페이스와 포트 매핑
+Docker 컨테이너는 일반적으로 호스트와 분리된 네트워크 네임스페이스를 사용합니다.
+따라서 컨테이너 내부의 80번 포트가 호스트의 80번 포트와 자동 연결되지는 않습니다.
+-p 8080:80은 호스트의 8080번 포트를 컨테이너의 80번 포트에 연결합니다.
+Dockerfile의 EXPOSE 80은 포트 사용 정보이며 실제 호스트 포트 공개를 의미하지 않습니다.
+
+### #14. 절대경로와 상대경로
+절대경로는 현재 작업 위치와 무관하게 전체 위치를 지정합니다.
+예: /home/choseonjun9533/codyssey/workstation/site
+
+상대경로는 현재 디렉터리를 기준으로 위치를 지정합니다.
+예: ./site/index.html
+
+바인드 마운트의 "$PWD/site:/usr/share/nginx/html:ro"에서
+$PWD는 호스트의 현재 절대경로로 확장됩니다.
+따라서 Docker가 호스트의 site 폴더를 정확하게 찾을 수 있습니다.
+프로젝트 내부 파일을 다룰 때는 상대경로가 간편하고,
+마운트 위치를 명확히 지정할 때는 절대경로가 유용합니다.
+
+### #16. 포트 충돌 진단 및 해결
+이미 8080 포트를 사용 중이라면 새 컨테이너 실행 시
+port is already allocated 등의 오류가 발생할 수 있습니다.
+
+1. docker ps 로 실행 중인 컨테이너의 포트 매핑 확인
+2. Ubuntu: ss -ltnp | grep ':8080'
+3. Windows PowerShell: netstat -ano | findstr :8080
+4. Docker 컨테이너가 점유했다면 docker stop 컨테이너이름
+5. 서비스를 유지해야 한다면 다른 호스트 포트 사용:
+   docker run -d -p 8082:80 --name codyssey-web-8082 codyssey-web:1.0
+
+실제로 포트 충돌이 발생한 것은 아니며,
+위 내용은 충돌이 발생했을 때의 진단·해결 절차입니다.
