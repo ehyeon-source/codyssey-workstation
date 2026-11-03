@@ -239,3 +239,12 @@ Docker 이미지와 컨테이너의 차이를 이해했고, 포트 매핑을 통
 
 ### 3. VS Code와 Ubuntu 연결
 ![VS Code WSL Ubuntu 연결](evidence/vscode-wsl.png)
+## 14. VS Code와 GitHub 계정 연동
+
+VS Code에 GitHub Pull Requests 확장 프로그램을 설치하고,
+GitHub 계정 인증을 완료했습니다.
+
+VS Code 내부에서 GitHub의 Pull Requests 및 Issues 메뉴가
+정상적으로 표시되는 것을 확인했습니다.
+
+![VS Code GitHub 연동](evidence/vscode-github.png)
