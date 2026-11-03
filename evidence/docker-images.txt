@@ -1,0 +1,4 @@
+IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
+codyssey-web:1.0     784a81c98ad7       93.6MB         26.3MB   U    
+hello-world:latest   c567b231f656       25.9kB         9.49kB   U    
+ubuntu:latest        6a06111c3b0a        163MB         45.9MB   U    

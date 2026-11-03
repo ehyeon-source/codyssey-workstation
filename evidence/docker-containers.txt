@@ -1,0 +1,6 @@
+CONTAINER ID   IMAGE              COMMAND                  CREATED          STATUS                        PORTS                                     NAMES
+2e7c280c8289   codyssey-web:1.0   "/docker-entrypoint.…"   36 minutes ago   Up 36 minutes                 0.0.0.0:8081->80/tcp, [::]:8081->80/tcp   codyssey-bind-8081
+cdc871926057   codyssey-web:1.0   "/docker-entrypoint.…"   40 minutes ago   Up 40 minutes                 0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   codyssey-web-8080
+061ead0fa3e6   ubuntu             "sleep infinity"         45 minutes ago   Exited (137) 44 minutes ago                                             codyssey-bg
+a546463ec54c   ubuntu             "bash"                   49 minutes ago   Exited (0) 46 minutes ago                                               codyssey-ubuntu
+7f0582125f40   hello-world        "/hello"                 53 minutes ago   Exited (0) 53 minutes ago                                               objective_chandrasekhar
