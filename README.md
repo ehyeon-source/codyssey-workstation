@@ -258,3 +258,7 @@ VS Code 내부에서 GitHub의 Pull Requests 및 Issues 메뉴가
 - [Docker 운영 및 실행 결과](evidence/docker-summary.txt)
 
 기존 웹사이트와 별개의 임시 파일을 사용하여 검증했습니다.
+
+## 16. 추가 실행 검증
+
+- [이미지 다운로드, 빌드, exec, Git 및 Bash 확인 기록](evidence/final-checks.txt)

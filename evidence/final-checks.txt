@@ -1,0 +1,46 @@
+]633;E;echo '$ docker pull ubuntu';99c58b1c-665d-4f0d-b06d-a42f77c9441c]633;C$ docker pull ubuntu
+Using default tag: latest
+latest: Pulling from library/ubuntu
+Digest: sha256:6a06111c3b0a8600feadb270aec771dc239bf407b25625f93f44ab00e11f4d3c
+Status: Image is up to date for ubuntu:latest
+docker.io/library/ubuntu:latest
+$ docker build -t codyssey-web:1.0 .
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 101B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/nginx:alpine
+#2 DONE 1.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 465B done
+#4 DONE 0.0s
+
+#5 [1/2] FROM docker.io/library/nginx:alpine@sha256:785835ea65db4bba6f021acc0f3be91b0fef76a53fe41f8588c6698d2aed0606
+#5 resolve docker.io/library/nginx:alpine@sha256:785835ea65db4bba6f021acc0f3be91b0fef76a53fe41f8588c6698d2aed0606 0.0s done
+#5 CACHED
+
+#6 [2/2] COPY site/ /usr/share/nginx/html/
+#6 DONE 0.0s
+
+#7 exporting to image
+#7 exporting layers 0.1s done
+#7 exporting manifest sha256:4986c4f2a65c932f1d80de18fdb9c505379ce2022c0932f481eee413044716e1 0.0s done
+#7 exporting config sha256:49df9e7b19534fcdcbfe64ed97ab636e0e83079a3f82247c2b052143af033785 done
+#7 exporting attestation manifest sha256:8c2c31b08f6556f9c0cf62239a0ef0ec9d3750f04a2282e1f446d658cea2a93a 0.0s done
+#7 exporting manifest list sha256:698af31c4cd28273707efbaca1b40967c2d00ee8aa15cad42028431b68978e98 0.0s done
+#7 naming to docker.io/library/codyssey-web:1.0 done
+#7 unpacking to docker.io/library/codyssey-web:1.0 0.0s done
+#7 DONE 0.1s
+$ docker exec codyssey-web-8080 nginx -v
+nginx version: nginx/1.31.8
+$ git config --global --get init.defaultBranch
+main
+$ bash --version
+GNU bash, version 5.3.9(1)-release (x86_64-pc-linux-gnu)
