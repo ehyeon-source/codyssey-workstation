@@ -229,3 +229,13 @@ Docker 이미지와 컨테이너의 차이를 이해했고, 포트 매핑을 통
 바인드 마운트는 작업실 파일의 변경 사항을 컨테이너에 반영하는 데 유용하며, 볼륨은 컨테이너를 삭제해도 데이터를 유지하는 데 활용된다는 점을 확인했습니다.
 
 마지막으로 Git과 GitHub를 이용해 작업 결과를 기록하고 공유하는 과정을 경험했습니다.
+## 13. 실습 화면 증거
+
+### 1. 바인드 마운트 실험
+![8080과 8081 웹사이트 비교](evidence/bind-mount.png)
+
+### 2. Docker 볼륨 영속성 검증
+![Docker 볼륨 데이터 유지](evidence/volume.png)
+
+### 3. VS Code와 Ubuntu 연결
+![VS Code WSL Ubuntu 연결](evidence/vscode-wsl.png)
