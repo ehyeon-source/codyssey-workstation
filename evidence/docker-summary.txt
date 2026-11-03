@@ -1,0 +1,55 @@
++ cat /etc/os-release
+PRETTY_NAME="Ubuntu 26.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="26.04"
+VERSION="26.04.1 LTS (Resolute Raccoon)"
+VERSION_CODENAME=resolute
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=resolute
+LOGO=ubuntu-logo
++ docker --version
+Docker version 29.9.2, build a82e528
++ git --version
+git version 2.53.0
++ docker images
+IMAGE                ID             DISK USAGE   CONTENT SIZE   EXTRA
+codyssey-web:1.0     784a81c98ad7       93.6MB         26.3MB   U    
+hello-world:latest   c567b231f656       25.9kB         9.49kB   U    
+ubuntu:latest        6a06111c3b0a        163MB         45.9MB   U    
++ docker ps
+CONTAINER ID   IMAGE              COMMAND                  CREATED             STATUS             PORTS                                     NAMES
+2e7c280c8289   codyssey-web:1.0   "/docker-entrypoint.…"   About an hour ago   Up About an hour   0.0.0.0:8081->80/tcp, [::]:8081->80/tcp   codyssey-bind-8081
+cdc871926057   codyssey-web:1.0   "/docker-entrypoint.…"   About an hour ago   Up About an hour   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   codyssey-web-8080
++ docker ps -a
+CONTAINER ID   IMAGE              COMMAND                  CREATED             STATUS                           PORTS                                     NAMES
+2e7c280c8289   codyssey-web:1.0   "/docker-entrypoint.…"   About an hour ago   Up About an hour                 0.0.0.0:8081->80/tcp, [::]:8081->80/tcp   codyssey-bind-8081
+cdc871926057   codyssey-web:1.0   "/docker-entrypoint.…"   About an hour ago   Up About an hour                 0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   codyssey-web-8080
+061ead0fa3e6   ubuntu             "sleep infinity"         About an hour ago   Exited (137) About an hour ago                                             codyssey-bg
+a546463ec54c   ubuntu             "bash"                   About an hour ago   Exited (0) About an hour ago                                               codyssey-ubuntu
+7f0582125f40   hello-world        "/hello"                 2 hours ago         Exited (0) 2 hours ago                                                     objective_chandrasekhar
++ docker logs codyssey-ubuntu
+[?2004h]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# ls
+[?2004l[0m[01;36mbin[0m  [01;34mboot[0m  [01;34mdev[0m  [01;34metc[0m  [01;34mhome[0m  [01;36mlib[0m  [01;36mlib64[0m  [01;34mmedia[0m  [01;34mmnt[0m  [01;34mopt[0m  [01;34mproc[0m  [01;34mroot[0m  [01;34mrun[0m  [01;36msbin[0m  [01;34msrv[0m  [01;34msys[0m  [30;42mtmp[0m  [01;34musr[0m  [01;34mvar[0m
+[?2004h]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [K]0;root@a546463ec54c: /root@a546463ec54c:/# [7mecho "Hello from Ubuntu container"[27mecho "Hello from Ubuntu container"
+[?2004lHello from Ubuntu container
+[?2004h]0;root@a546463ec54c: /root@a546463ec54c:/# [K[7mexit[27mexit
+[?2004lexit
++ docker stats --no-stream codyssey-web-8080
+CONTAINER ID   NAME                CPU %     MEM USAGE / LIMIT    MEM %     NET I/O           BLOCK I/O     PIDS
+cdc871926057   codyssey-web-8080   0.00%     18.6MiB / 15.25GiB   0.12%     10.1kB / 6.66kB   0B / 12.3kB   25
++ docker port codyssey-web-8080
+80/tcp -> 0.0.0.0:8080
+80/tcp -> [::]:8080
++ docker port codyssey-bind-8081
+80/tcp -> 0.0.0.0:8081
+80/tcp -> [::]:8081
++ docker volume ls
+DRIVER    VOLUME NAME
+local     codyssey-data
++ docker run --rm -v codyssey-data:/data ubuntu cat /data/note.txt
+Hello Volume

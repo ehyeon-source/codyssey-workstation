@@ -1,0 +1,52 @@
++ pwd
+/home/choseonjun9533/codyssey/workstation
++ ls --color=auto -la
+total 40
+drwxr-xr-x 5 choseonjun9533 choseonjun9533 4096 Nov  3 16:52 .
+drwxr-xr-x 3 choseonjun9533 choseonjun9533 4096 Nov  3 14:29 ..
+drwxr-xr-x 7 choseonjun9533 choseonjun9533 4096 Nov  3 17:02 .git
+-rw-r--r-- 1 choseonjun9533 choseonjun9533   25 Nov  3 16:38 .gitignore
+-rw-r--r-- 1 choseonjun9533 choseonjun9533   64 Nov  3 15:43 Dockerfile
+-rw-r--r-- 1 choseonjun9533 choseonjun9533 8637 Nov  3 17:01 README.md
+drwxr-xr-x 2 choseonjun9533 choseonjun9533 4096 Nov  3 17:04 evidence
+drwxr-xr-x 2 choseonjun9533 choseonjun9533 4096 Nov  3 15:52 site
++ mkdir evidence/terminal-demo
++ cd evidence/terminal-demo
++ pwd
+/home/choseonjun9533/codyssey/workstation/evidence/terminal-demo
++ touch sample.txt
++ printf 'Codyssey terminal test\n'
++ cat sample.txt
+Codyssey terminal test
++ ls --color=auto -l sample.txt
+-rw-r--r-- 1 choseonjun9533 choseonjun9533 23 Nov  3 17:04 sample.txt
++ chmod 600 sample.txt
++ ls --color=auto -l sample.txt
+-rw------- 1 choseonjun9533 choseonjun9533 23 Nov  3 17:04 sample.txt
++ chmod 644 sample.txt
++ ls --color=auto -l sample.txt
+-rw-r--r-- 1 choseonjun9533 choseonjun9533 23 Nov  3 17:04 sample.txt
++ ls --color=auto -ld .
+drwxr-xr-x 2 choseonjun9533 choseonjun9533 4096 Nov  3 17:04 .
++ chmod 700 .
++ ls --color=auto -ld .
+drwx------ 2 choseonjun9533 choseonjun9533 4096 Nov  3 17:04 .
++ chmod 755 .
++ ls --color=auto -ld .
+drwxr-xr-x 2 choseonjun9533 choseonjun9533 4096 Nov  3 17:04 .
++ cp sample.txt copy.txt
++ mv copy.txt moved.txt
++ ls --color=auto -la
+total 16
+drwxr-xr-x 2 choseonjun9533 choseonjun9533 4096 Nov  3 17:04 .
+drwxr-xr-x 3 choseonjun9533 choseonjun9533 4096 Nov  3 17:04 ..
+-rw-r--r-- 1 choseonjun9533 choseonjun9533   23 Nov  3 17:04 moved.txt
+-rw-r--r-- 1 choseonjun9533 choseonjun9533   23 Nov  3 17:04 sample.txt
++ rm moved.txt
++ ls --color=auto -la
+total 12
+drwxr-xr-x 2 choseonjun9533 choseonjun9533 4096 Nov  3 17:04 .
+drwxr-xr-x 3 choseonjun9533 choseonjun9533 4096 Nov  3 17:04 ..
+-rw-r--r-- 1 choseonjun9533 choseonjun9533   23 Nov  3 17:04 sample.txt
++ cd ../..
++ rm -r evidence/terminal-demo

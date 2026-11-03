@@ -248,3 +248,13 @@ VS Code 내부에서 GitHub의 Pull Requests 및 Issues 메뉴가
 정상적으로 표시되는 것을 확인했습니다.
 
 ![VS Code GitHub 연동](evidence/vscode-github.png)
+
+## 15. 명령어 실습 및 실행 결과 기록
+
+기본 터미널 명령어와 파일·디렉터리 권한 변경을 재실습하고,
+명령어 입력 및 실제 출력 결과를 기록했습니다.
+
+- [Linux 명령어 및 권한 변경 전후 기록](evidence/terminal-commands.txt)
+- [Docker 운영 및 실행 결과](evidence/docker-summary.txt)
+
+기존 웹사이트와 별개의 임시 파일을 사용하여 검증했습니다.
